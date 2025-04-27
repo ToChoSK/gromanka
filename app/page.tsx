@@ -8,75 +8,119 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
       {/* Hero Section */}
-      <section className="relative h-screen">
+      <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/hrabkov-panorama.jpeg"
             alt="Panoráma obce Hrabkov"
             fill
             priority
-            className="object-cover"
+            className="object-cover scale-[1.02] animate-slow-zoom"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 to-blue-950/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-blue-950/60 to-blue-950/80" />
         </div>
 
+        <div className="absolute inset-0 bg-[url('/images/texture-overlay.png')] opacity-20 mix-blend-overlay"></div>
+
         <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-start">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
-            <span className="text-sky-300">Gromanka</span>
-          </h1>
-          <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">Občianske združenie</h2>
-          <p className="text-xl text-white/90 max-w-2xl mb-8">
-            Rozvíjame kultúrno-spoločenské aktivity a chránime životné prostredie v obci Hrabkov
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Button size="lg" className="bg-sky-600 hover:bg-sky-700">
-              O združení
-            </Button>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-              Naše aktivity
-            </Button>
+          <div className="animate-fade-in-up">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-lg">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-sky-400">Gromanka</span>
+            </h1>
+            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 drop-shadow-md">Občianske združenie</h2>
+            <p className="text-xl text-white/90 max-w-2xl mb-8 drop-shadow-sm">
+              Rozvíjame kultúrno-spoločenské aktivity a chránime životné prostredie v obci Hrabkov
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a href="#o-nas">
+                <Button
+                  size="lg"
+                  className="bg-sky-600 hover:bg-sky-700 transition-all duration-300 hover:scale-105 shadow-lg shadow-sky-600/20"
+                >
+                  O združení
+                </Button>
+              </a>
+              <a href="#aktivity">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-sky-600 border-white hover:text-white hover:bg-white/20 hover:border-sky-300 transition-all duration-300 hover:scale-105"
+                >
+                  Naše aktivity
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-          <ChevronDown size={36} />
+          <a href="#o-nas" className="hover:text-sky-300 transition-colors">
+            <ChevronDown size={36} />
+          </a>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-white" id="o-nas">
+      <section className="py-24 bg-gradient-to-b from-white to-sky-50" id="o-nas">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold text-blue-950 mb-6">O združení Gromanka</h2>
-              <p className="text-lg text-gray-700 mb-4">
+            <div className="md:w-1/2" data-aos="fade-right">
+              <div className="inline-block mb-6 px-4 py-1 bg-sky-100 rounded-full text-sky-700 font-medium">O nás</div>
+              <h2 className="text-4xl font-bold text-blue-950 mb-6 leading-tight">
+                O združení{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-700">
+                  Gromanka
+                </span>
+              </h2>
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed">
                 Občianske združenie Gromanka bolo založené s cieľom podporovať a rozvíjať kultúrno-spoločenské aktivity
                 v obci Hrabkov, ako aj chrániť jej jedinečné prírodné prostredie.
               </p>
-              <p className="text-lg text-gray-700 mb-6">
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
                 Naším poslaním je zachovávať historické a kultúrne dedičstvo obce, organizovať vzdelávacie a
                 environmentálne aktivity a prispievať k zveľaďovaniu obce Hrabkov.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 text-blue-700">
-                  <MapPin size={20} />
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-8">
+                <div className="flex items-center gap-2 text-blue-700 bg-white p-3 rounded-lg shadow-sm">
+                  <MapPin size={20} className="text-sky-600" />
                   <span>Napájadlá 5, 2277/5, 040 22, Košice</span>
                 </div>
-                <div className="flex items-center gap-2 text-blue-700">
-                  <Mail size={20} />
+                <div className="flex items-center gap-2 text-blue-700 bg-white p-3 rounded-lg shadow-sm">
+                  <Mail size={20} className="text-sky-600" />
                   <span>info@gromanka.sk</span>
                 </div>
               </div>
+              <a href="#aktivity">
+                <Button className="bg-sky-600 hover:bg-sky-700 transition-all duration-300 hover:scale-105 shadow-lg shadow-sky-600/20">
+                  Naše aktivity
+                </Button>
+              </a>
             </div>
-            <div className="md:w-1/2 relative h-[400px] rounded-xl overflow-hidden shadow-xl">
-              <Image src="/images/hrabkov-village.jpeg" alt="Obec Hrabkov" fill className="object-cover" />
+            <div
+              className="md:w-1/2 relative h-[500px] rounded-2xl overflow-hidden shadow-2xl group"
+              data-aos="fade-left"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-950/60 to-transparent z-10"></div>
+              <Image
+                src="/images/hrabkov-village.jpeg"
+                alt="Obec Hrabkov"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute bottom-6 left-6 z-20 text-white">
+                <h3 className="text-2xl font-bold mb-2">Obec Hrabkov</h3>
+                <p className="text-white/80">Malebná dedinka v srdci Šariša</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Hrabkov Section */}
-      <section className="py-20 bg-gradient-to-b from-sky-50 to-white" id="hrabkov">
+      <section className="py-24 bg-gradient-to-b from-sky-50 to-white relative overflow-hidden" id="hrabkov">
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-transparent"></div>
+        <div className="absolute -top-24 -right-24 w-64 h-64 bg-sky-200 rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-blue-950 mb-2 text-center">Obec Hrabkov</h2>
           <p className="text-lg text-gray-700 mb-12 text-center max-w-3xl mx-auto">
@@ -215,47 +259,326 @@ export default function HomePage() {
             Krásne zábery obce Hrabkov a okolitej prírody
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="relative h-64 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-              <Image src="/images/hrabkov-panorama.jpeg" alt="Panoráma Hrabkova" fill className="object-cover" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+              <Image
+                src="/images/hrabkov-panorama.jpeg"
+                alt="Panoráma Hrabkova"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                <h3 className="text-xl font-bold mb-2">Panoráma Hrabkova</h3>
+                <p className="text-white/80">Nádherný výhľad na obec a okolie</p>
+              </div>
             </div>
-            <div className="relative h-64 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-              <Image src="/images/hrabkov-mountain.jpeg" alt="Hory pri Hrabkove" fill className="object-cover" />
+            <div className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+              <Image
+                src="/images/hrabkov-mountain.jpeg"
+                alt="Hory pri Hrabkove"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                <h3 className="text-xl font-bold mb-2">Hory pri Hrabkove</h3>
+                <p className="text-white/80">Majestátne pohorie obklopujúce obec</p>
+              </div>
             </div>
-            <div className="relative h-64 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-              <Image src="/images/hrabkov-village.jpeg" alt="Obec Hrabkov" fill className="object-cover" />
+            <div className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+              <Image
+                src="/images/hrabkov-village.jpeg"
+                alt="Obec Hrabkov"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                <h3 className="text-xl font-bold mb-2">Obec Hrabkov</h3>
+                <p className="text-white/80">Pohľad na centrum obce</p>
+              </div>
             </div>
-            <div className="relative h-64 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-              <Image src="/images/hrabkov-fields.jpeg" alt="Polia pri Hrabkove" fill className="object-cover" />
+            <div className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+              <Image
+                src="/images/hrabkov-fields.jpeg"
+                alt="Polia pri Hrabkove"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                <h3 className="text-xl font-bold mb-2">Polia pri Hrabkove</h3>
+                <p className="text-white/80">Rozľahlé polia v okolí obce</p>
+              </div>
             </div>
-            <div className="relative h-64 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-              <Image src="/images/hrabkov-rock.jpeg" alt="Prírodné útvary pri Hrabkove" fill className="object-cover" />
+            <div className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+              <Image
+                src="/images/hrabkov-rock.jpeg"
+                alt="Prírodné útvary pri Hrabkove"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                <h3 className="text-xl font-bold mb-2">Prírodné útvary</h3>
+                <p className="text-white/80">Zaujímavé skalné formácie v okolí</p>
+              </div>
             </div>
-            <div className="relative h-64 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-              <Image src="/images/hrabkov-aerial.jpeg" alt="Letecký pohľad na Hrabkov" fill className="object-cover" />
+            <div className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+              <Image
+                src="/images/hrabkov-aerial.jpeg"
+                alt="Letecký pohľad na Hrabkov"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                <h3 className="text-xl font-bold mb-2">Letecký pohľad</h3>
+                <p className="text-white/80">Obec Hrabkov z vtáčej perspektívy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-24 bg-gradient-to-b from-white to-sky-50 relative overflow-hidden" id="kontakt">
+        <div className="absolute -top-24 -left-24 w-64 h-64 bg-sky-200 rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
+
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="inline-block mb-4 px-4 py-1 bg-sky-100 rounded-full text-sky-700 font-medium">
+              Kontaktujte nás
+            </div>
+            <h2 className="text-4xl font-bold text-blue-950 mb-4">
+              Máte otázky?{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-700">
+                Napíšte nám
+              </span>
+            </h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              Radi vám odpovieme na akékoľvek otázky týkajúce sa nášho združenia alebo aktivít v obci Hrabkov
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="bg-gradient-to-br from-blue-800 to-blue-950 p-8 text-white">
+                <h3 className="text-2xl font-bold mb-6">Kontaktné informácie</h3>
+
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-white/10 p-3 rounded-full">
+                      <MapPin className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-lg">Adresa</h4>
+                      <p className="text-white/80">Napájadlá 5, 2277/5, 040 22, Košice</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="bg-white/10 p-3 rounded-full">
+                      <Mail className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-lg">Email</h4>
+                      <p className="text-white/80">info@gromanka.sk</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="bg-white/10 p-3 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-phone"
+                      >
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-lg">Telefón</h4>
+                      <p className="text-white/80">+421 900 000 000</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-12">
+                  <h4 className="font-medium text-lg mb-4">Sledujte nás</h4>
+                  <div className="flex gap-4">
+                    <a href="#" className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-facebook"
+                      >
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                      </svg>
+                    </a>
+                    <a href="#" className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-instagram"
+                      >
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                      </svg>
+                    </a>
+                    <a href="#" className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-mail"
+                      >
+                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8">
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                        Meno
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
+                        placeholder="Vaše meno"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
+                        placeholder="vas@email.sk"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                      Predmet
+                    </label>
+                    <input
+                      type="text"
+                      id="subject"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
+                      placeholder="Predmet správy"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                      Správa
+                    </label>
+                    <textarea
+                      id="message"
+                      rows={4}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
+                      placeholder="Vaša správa..."
+                    ></textarea>
+                  </div>
+
+                  <Button className="w-full bg-sky-600 hover:bg-sky-700 transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-sky-600/20">
+                    Odoslať správu
+                  </Button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Membership Section */}
-      <section className="py-20 bg-blue-950 text-white" id="clenstvo">
-        <div className="container mx-auto px-4">
+      <section
+        className="py-24 bg-gradient-to-b from-blue-900 to-blue-950 text-white relative overflow-hidden"
+        id="clenstvo"
+      >
+        <div className="absolute top-0 right-0 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-700/10 rounded-full blur-3xl"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Staňte sa členom združenia</h2>
-            <p className="text-lg text-white/80 mb-8">
+            <div className="inline-block mb-6 px-4 py-1 bg-sky-900/50 rounded-full text-sky-300 font-medium">
+              Členstvo
+            </div>
+            <h2 className="text-4xl font-bold mb-6 leading-tight">
+              Staňte sa{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-sky-400">
+                členom združenia
+              </span>
+            </h2>
+            <p className="text-xl text-white/80 mb-10 leading-relaxed">
               Členstvo v združení Gromanka je otvorené pre všetkých, ktorí majú záujem podporiť rozvoj obce Hrabkov a
-              zapojiť sa do našich aktivít.
+              zapojiť sa do našich aktivít. Pridajte sa k nám a pomôžte nám chrániť a rozvíjať našu obec.
             </p>
-            <Button size="lg" className="bg-sky-500 hover:bg-sky-600 text-white">
-              Prihláška za člena
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-sky-500 hover:bg-sky-600 text-white transition-all duration-300 hover:scale-105 shadow-lg shadow-sky-500/20"
+              >
+                Prihláška za člena
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white/30 text-sky-300 hover:text-white hover:bg-white/10 transition-all duration-300 hover:scale-105"
+              >
+                Viac informácií
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-blue-900 text-white py-12">
+      <footer className="bg-gradient-to-b from-blue-900 to-blue-950 text-white py-16 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent"></div>
+        <div className="absolute -top-24 -right-24 w-64 h-64 bg-sky-800/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-blue-800/10 rounded-full blur-3xl"></div>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
