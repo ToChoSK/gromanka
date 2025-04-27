@@ -1,6 +1,6 @@
 # Gromanka - Občianske združenie
 
-![Gromanka Logo](https://sjc.microlink.io/P7G7H62gUFRTNeWyLno4KXbQaitOmIvqShmlPmr7Cs-B-YaT1DZHbjLxHcMwn9NF6I05xSI0HxcbtKRBNuqgAQ.jpeg)
+![Gromanka Logo](https://tochosk.github.io/gromanka/images/hrabkov-panorama.jpeg)
 
 ## O projekte
 
