@@ -9,6 +9,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  output: 'export', // PRIDANÉ - statický export
+  basePath: '/gromanka', // PRIDANÉ - názov tvojho repozitára
+  assetPrefix: '/gromanka/', // PRIDANÉ - správne odkazy
 }
 
 export default nextConfig
