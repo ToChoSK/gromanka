@@ -11,7 +11,7 @@ export default function HomePage() {
       <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hrabkov-panorama.jpeg"
+            src="/gromanka/images/hrabkov-panorama.jpeg"
             alt="Panoráma obce Hrabkov"
             fill
             priority
@@ -20,7 +20,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-blue-950/60 to-blue-950/80" />
         </div>
 
-        <div className="absolute inset-0 bg-[url('/images/texture-overlay.png')] opacity-20 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/gromanka/images/texture-overlay.png')] opacity-20 mix-blend-overlay"></div>
 
         <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-start">
           <div className="animate-fade-in-up">
@@ -102,7 +102,7 @@ export default function HomePage() {
             >
               <div className="absolute inset-0 bg-gradient-to-t from-blue-950/60 to-transparent z-10"></div>
               <Image
-                src="/images/hrabkov-village.jpeg"
+                src="/gromanka/images/hrabkov-village.jpeg"
                 alt="Obec Hrabkov"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -130,7 +130,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg">
               <div className="relative h-48">
-                <Image src="/images/hrabkov-fields.jpeg" alt="Príroda Hrabkova" fill className="object-cover" />
+                <Image src="/gromanka/images/hrabkov-fields.jpeg" alt="Príroda Hrabkova" fill className="object-cover" />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-blue-900 mb-2">Prírodné bohatstvo</h3>
@@ -143,7 +143,7 @@ export default function HomePage() {
 
             <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg">
               <div className="relative h-48">
-                <Image src="/images/hrabkov-ruins.jpeg" alt="História Hrabkova" fill className="object-cover" />
+                <Image src="/gromanka/images/hrabkov-ruins.jpeg" alt="História Hrabkova" fill className="object-cover" />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-blue-900 mb-2">Bohatá história</h3>
@@ -156,7 +156,7 @@ export default function HomePage() {
 
             <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg">
               <div className="relative h-48">
-                <Image src="/images/hrabkov-aerial.jpeg" alt="Komunita Hrabkova" fill className="object-cover" />
+                <Image src="/gromanka/images/hrabkov-aerial.jpeg" alt="Komunita Hrabkova" fill className="object-cover" />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-blue-900 mb-2">Živá komunita</h3>
@@ -262,7 +262,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
               <Image
-                src="/images/hrabkov-panorama.jpeg"
+                src="/gromanka/images/hrabkov-panorama.jpeg"
                 alt="Panoráma Hrabkova"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -275,7 +275,7 @@ export default function HomePage() {
             </div>
             <div className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
               <Image
-                src="/images/hrabkov-mountain.jpeg"
+                src="/gromanka/images/hrabkov-mountain.jpeg"
                 alt="Hory pri Hrabkove"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -288,7 +288,7 @@ export default function HomePage() {
             </div>
             <div className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
               <Image
-                src="/images/hrabkov-village.jpeg"
+                src="/gromanka/images/hrabkov-village.jpeg"
                 alt="Obec Hrabkov"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -301,7 +301,7 @@ export default function HomePage() {
             </div>
             <div className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
               <Image
-                src="/images/hrabkov-fields.jpeg"
+                src="/gromanka/images/hrabkov-fields.jpeg"
                 alt="Polia pri Hrabkove"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -314,7 +314,7 @@ export default function HomePage() {
             </div>
             <div className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
               <Image
-                src="/images/hrabkov-rock.jpeg"
+                src="/gromanka/images/hrabkov-rock.jpeg"
                 alt="Prírodné útvary pri Hrabkove"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -327,7 +327,7 @@ export default function HomePage() {
             </div>
             <div className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
               <Image
-                src="/images/hrabkov-aerial.jpeg"
+                src="/gromanka/images/hrabkov-aerial.jpeg"
                 alt="Letecký pohľad na Hrabkov"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
