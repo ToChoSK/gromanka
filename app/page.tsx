@@ -590,7 +590,7 @@ export default function HomePage() {
                           </div>
                           <div>
                             <span className="font-medium text-gray-800">Miestne korene:</span>
-                            <span className="text-gray-600 ml-2">Pochádza z obce Hrabkov</span>
+                            <span className="text-gray-600 ml-2">Má korene z Hrabkova</span>
                           </div>
                         </div>
 
@@ -616,9 +616,7 @@ export default function HomePage() {
                       </div>
 
                       <p className="text-gray-700 leading-relaxed">
-                        Michal Chovančák vedie naše združenie s cieľom rozvíjať obec Hrabkov. Ako miestny rodák pozná
-                        potreby komunity a ako študent technickej univerzity prináša moderné riešenia a fresh pohľad na
-                        rozvoj obce.
+                        Michal Chovančák vedie naše združenie s cieľom rozvíjať jeho aktivity. Ako študent technickej univerzity prináša moderné riešenia a pohľad na rozvoj zdrzuženia.
                       </p>
                     </div>
                   </div>
