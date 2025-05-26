@@ -18,6 +18,12 @@ import {
   HomeIcon,
 } from "lucide-react"
 
+// Pridajte túto funkciu na začiatok súboru pred export default function HomePage()
+const getImagePath = (imagePath: string) => {
+  const basePath = process.env.NODE_ENV === "production" ? "/gromanka" : ""
+  return `${basePath}${imagePath}`
+}
+
 export default function HomePage() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -27,15 +33,35 @@ export default function HomePage() {
   }
 
   const galleryImages = [
-    { src: "/images/hrabkov-panorama.jpeg", title: "Panoráma Hrabkova", desc: "Nádherný výhľad na obec a okolie" },
-    { src: "/images/hrabkov-mountain.jpeg", title: "Hory pri Hrabkove", desc: "Majestátne pohorie obklopujúce obec" },
-    { src: "/images/hrabkov-village.jpeg", title: "Obec Hrabkov", desc: "Pohľad na centrum obce" },
-    { src: "/images/hrabkov-fields.jpeg", title: "Polia pri Hrabkove", desc: "Rozľahlé polia v okolí obce" },
-    { src: "/images/hrabkov-rock.jpeg", title: "Prírodné útvary", desc: "Zaujímavé skalné formácie v okolí" },
-    { src: "/images/hrabkov-aerial.jpeg", title: "Letecký pohľad", desc: "Obec Hrabkov z vtáčej perspektívy" },
-    { src: "/images/hrabkov-view.jpeg", title: "Výhľad na obec", desc: "Krásny pohľad na Hrabkov" },
-    { src: "/images/hrabkov-autumn.jpeg", title: "Jesenné farby", desc: "Hrabkov v jesennom období" },
-    { src: "/images/hrabkov-ruins.jpeg", title: "Historické pamiatky", desc: "Pozostatky histórie obce" },
+    {
+      src: getImagePath("/images/hrabkov-panorama.jpeg"),
+      title: "Panoráma Hrabkova",
+      desc: "Nádherný výhľad na obec a okolie",
+    },
+    {
+      src: getImagePath("/images/hrabkov-mountain.jpeg"),
+      title: "Hory pri Hrabkove",
+      desc: "Majestátne pohorie obklopujúce obec",
+    },
+    { src: getImagePath("/images/hrabkov-village.jpeg"), title: "Obec Hrabkov", desc: "Pohľad na centrum obce" },
+    {
+      src: getImagePath("/images/hrabkov-fields.jpeg"),
+      title: "Polia pri Hrabkove",
+      desc: "Rozľahlé polia v okolí obce",
+    },
+    {
+      src: getImagePath("/images/hrabkov-rock.jpeg"),
+      title: "Prírodné útvary",
+      desc: "Zaujímavé skalné formácie v okolí",
+    },
+    {
+      src: getImagePath("/images/hrabkov-aerial.jpeg"),
+      title: "Letecký pohľad",
+      desc: "Obec Hrabkov z vtáčej perspektívy",
+    },
+    { src: getImagePath("/images/hrabkov-view.jpeg"), title: "Výhľad na obec", desc: "Krásny pohľad na Hrabkov" },
+    { src: getImagePath("/images/hrabkov-autumn.jpeg"), title: "Jesenné farby", desc: "Hrabkov v jesennom období" },
+    { src: getImagePath("/images/hrabkov-ruins.jpeg"), title: "Historické pamiatky", desc: "Pozostatky histórie obce" },
   ]
 
   return (
@@ -44,7 +70,7 @@ export default function HomePage() {
         <section className="relative h-screen overflow-hidden">
           <div className="absolute inset-0">
             <Image
-                src="/images/hrabkov-panorama.jpeg"
+                src={getImagePath("/images/hrabkov-panorama.jpeg") || "/placeholder.svg"}
                 alt="Panoráma obce Hrabkov"
                 fill
                 priority
@@ -132,7 +158,7 @@ export default function HomePage() {
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-950/60 to-transparent z-10"></div>
                 <Image
-                    src="/images/hrabkov-village.jpeg"
+                    src={getImagePath("/images/hrabkov-village.jpeg") || "/placeholder.svg"}
                     alt="Obec Hrabkov"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -160,7 +186,12 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg">
                 <div className="relative h-48">
-                  <Image src="/images/hrabkov-fields.jpeg" alt="Príroda Hrabkova" fill className="object-cover" />
+                  <Image
+                      src={getImagePath("/images/hrabkov-fields.jpeg") || "/placeholder.svg"}
+                      alt="Príroda Hrabkova"
+                      fill
+                      className="object-cover"
+                  />
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold text-blue-900 mb-2">Prírodné bohatstvo</h3>
@@ -173,7 +204,12 @@ export default function HomePage() {
 
               <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg">
                 <div className="relative h-48">
-                  <Image src="/images/hrabkov-ruins.jpeg" alt="História Hrabkova" fill className="object-cover" />
+                  <Image
+                      src={getImagePath("/images/hrabkov-ruins.jpeg") || "/placeholder.svg"}
+                      alt="História Hrabkova"
+                      fill
+                      className="object-cover"
+                  />
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold text-blue-900 mb-2">Bohatá história</h3>
@@ -186,7 +222,12 @@ export default function HomePage() {
 
               <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg">
                 <div className="relative h-48">
-                  <Image src="/images/hrabkov-aerial.jpeg" alt="Komunita Hrabkova" fill className="object-cover" />
+                  <Image
+                      src={getImagePath("/images/hrabkov-aerial.jpeg") || "/placeholder.svg"}
+                      alt="Komunita Hrabkova"
+                      fill
+                      className="object-cover"
+                  />
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold text-blue-900 mb-2">Živá komunita</h3>
@@ -293,7 +334,7 @@ export default function HomePage() {
               {galleryImages.map((image, index) => (
                   <div key={index} className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
                     <Image
-                        src={image.src || "/placeholder.svg"}
+                        src={image.src || getImagePath("/placeholder.svg")}
                         alt={image.title}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110"

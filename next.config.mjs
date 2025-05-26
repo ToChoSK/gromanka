@@ -11,11 +11,12 @@ const nextConfig = {
     images: {
         unoptimized: true,
     },
-    // only apply basePath/assetPrefix/output on production (static export)
+    // GitHub Pages configuration
     ...(isProd && {
         output: 'export',
         basePath: '/gromanka',
         assetPrefix: '/gromanka/',
+        trailingSlash: true,
     }),
 };
 
