@@ -1,6 +1,6 @@
 # Gromanka - Občianske združenie
 
-![Gromanka Logo](https://tochosk.github.io/gromanka/images/hrabkov-panorama.jpeg)
+![Gromanka Logo](https://tochosk.github.io/images/hrabkov-panorama.jpeg)
 
 ## O projekte
 
@@ -41,6 +41,3 @@ Pre viac informácií o združení Gromanka nás kontaktujte na:
 - Email: info@gromanka.sk
 - Adresa: Napájadlá 5, 2277/5, 040 22, Košice
 
-## Licencia
-
-Tento projekt je licencovaný pod [MIT licenciou](LICENSE).

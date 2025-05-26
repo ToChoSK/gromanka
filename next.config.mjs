@@ -1,17 +1,22 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-  output: 'export', // PRIDANÉ - statický export
-  basePath: '/gromanka', // PRIDANÉ - názov tvojho repozitára
-  assetPrefix: '/gromanka/', // PRIDANÉ - správne odkazy
-}
+const isProd = process.env.NODE_ENV === 'production';
 
-export default nextConfig
+const nextConfig = {
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
+    typescript: {
+        ignoreBuildErrors: true,
+    },
+    images: {
+        unoptimized: true,
+    },
+    // only apply basePath/assetPrefix/output on production (static export)
+    ...(isProd && {
+        output: 'export',
+        basePath: '/gromanka',
+        assetPrefix: '/gromanka/',
+    }),
+};
+
+export default nextConfig;
