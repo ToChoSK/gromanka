@@ -18,10 +18,12 @@ import {
   HomeIcon,
 } from "lucide-react"
 
-// Pridajte túto funkciu na začiatok súboru pred export default function HomePage()
+// Opravená funkcia pre správne cesty k obrázkom
 const getImagePath = (imagePath: string) => {
   const basePath = process.env.NODE_ENV === "production" ? "/gromanka" : ""
-  return `${basePath}${imagePath}`
+  // Uistíme sa, že cesta začína lomítkom
+  const cleanPath = imagePath.startsWith("/") ? imagePath : `/${imagePath}`
+  return `${basePath}${cleanPath}`
 }
 
 export default function HomePage() {
@@ -75,6 +77,9 @@ export default function HomePage() {
                 fill
                 priority
                 className="object-cover"
+                onError={(e) => {
+                  e.currentTarget.src = "/placeholder.svg?height=800&width=1200"
+                }}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-blue-950/60 to-blue-950/80" />
           </div>
@@ -162,6 +167,9 @@ export default function HomePage() {
                     alt="Obec Hrabkov"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    onError={(e) => {
+                      e.currentTarget.src = "/placeholder.svg?height=500&width=600"
+                    }}
                 />
                 <div className="absolute bottom-6 left-6 z-20 text-white">
                   <h3 className="text-2xl font-bold mb-2">Obec Hrabkov</h3>
@@ -191,6 +199,9 @@ export default function HomePage() {
                       alt="Príroda Hrabkova"
                       fill
                       className="object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src = "/placeholder.svg?height=200&width=400"
+                      }}
                   />
                 </div>
                 <CardContent className="p-6">
@@ -209,6 +220,9 @@ export default function HomePage() {
                       alt="História Hrabkova"
                       fill
                       className="object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src = "/placeholder.svg?height=200&width=400"
+                      }}
                   />
                 </div>
                 <CardContent className="p-6">
@@ -227,6 +241,9 @@ export default function HomePage() {
                       alt="Komunita Hrabkova"
                       fill
                       className="object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src = "/placeholder.svg?height=200&width=400"
+                      }}
                   />
                 </div>
                 <CardContent className="p-6">
@@ -334,10 +351,13 @@ export default function HomePage() {
               {galleryImages.map((image, index) => (
                   <div key={index} className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
                     <Image
-                        src={image.src || getImagePath("/placeholder.svg")}
+                        src={image.src || "/placeholder.svg"}
                         alt={image.title}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        onError={(e) => {
+                          e.currentTarget.src = "/placeholder.svg?height=320&width=400"
+                        }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">

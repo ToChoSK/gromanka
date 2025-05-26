@@ -10,6 +10,8 @@ const nextConfig = {
     },
     images: {
         unoptimized: true,
+        loader: 'custom',
+        loaderFile: './image-loader.js'
     },
     // GitHub Pages configuration
     ...(isProd && {
