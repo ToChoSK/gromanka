@@ -18,15 +18,13 @@ import {
   HomeIcon,
 } from "lucide-react"
 
-// Opravená funkcia pre správne cesty k obrázkom
-const getImagePath = (imagePath: string) => {
-  const basePath = process.env.NODE_ENV === "production" ? "/gromanka" : ""
-  // Uistíme sa, že cesta začína lomítkom
-  const cleanPath = imagePath.startsWith("/") ? imagePath : `/${imagePath}`
-  return `${basePath}${cleanPath}`
-}
-
 export default function HomePage() {
+  // Jednoduchá funkcia pre cesty k obrázkom
+  const getImageSrc = (imageName: string) => {
+    const basePath = process.env.NODE_ENV === "production" ? "/gromanka" : ""
+    return `${basePath}/images/${imageName}`
+  }
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -36,34 +34,50 @@ export default function HomePage() {
 
   const galleryImages = [
     {
-      src: getImagePath("/images/hrabkov-panorama.jpeg"),
+      src: "hrabkov-panorama.jpeg",
       title: "Panoráma Hrabkova",
       desc: "Nádherný výhľad na obec a okolie",
     },
     {
-      src: getImagePath("/images/hrabkov-mountain.jpeg"),
+      src: "hrabkov-mountain.jpeg",
       title: "Hory pri Hrabkove",
       desc: "Majestátne pohorie obklopujúce obec",
     },
-    { src: getImagePath("/images/hrabkov-village.jpeg"), title: "Obec Hrabkov", desc: "Pohľad na centrum obce" },
     {
-      src: getImagePath("/images/hrabkov-fields.jpeg"),
+      src: "hrabkov-village.jpeg",
+      title: "Obec Hrabkov",
+      desc: "Pohľad na centrum obce",
+    },
+    {
+      src: "hrabkov-fields.jpeg",
       title: "Polia pri Hrabkove",
       desc: "Rozľahlé polia v okolí obce",
     },
     {
-      src: getImagePath("/images/hrabkov-rock.jpeg"),
+      src: "hrabkov-rock.jpeg",
       title: "Prírodné útvary",
       desc: "Zaujímavé skalné formácie v okolí",
     },
     {
-      src: getImagePath("/images/hrabkov-aerial.jpeg"),
+      src: "hrabkov-aerial.jpeg",
       title: "Letecký pohľad",
       desc: "Obec Hrabkov z vtáčej perspektívy",
     },
-    { src: getImagePath("/images/hrabkov-view.jpeg"), title: "Výhľad na obec", desc: "Krásny pohľad na Hrabkov" },
-    { src: getImagePath("/images/hrabkov-autumn.jpeg"), title: "Jesenné farby", desc: "Hrabkov v jesennom období" },
-    { src: getImagePath("/images/hrabkov-ruins.jpeg"), title: "Historické pamiatky", desc: "Pozostatky histórie obce" },
+    {
+      src: "hrabkov-view.jpeg",
+      title: "Výhľad na obec",
+      desc: "Krásny pohľad na Hrabkov",
+    },
+    {
+      src: "hrabkov-autumn.jpeg",
+      title: "Jesenné farby",
+      desc: "Hrabkov v jesennom období",
+    },
+    {
+      src: "hrabkov-ruins.jpeg",
+      title: "Historické pamiatky",
+      desc: "Pozostatky histórie obce",
+    },
   ]
 
   return (
@@ -72,14 +86,11 @@ export default function HomePage() {
         <section className="relative h-screen overflow-hidden">
           <div className="absolute inset-0">
             <Image
-                src={getImagePath("/images/hrabkov-panorama.jpeg") || "/placeholder.svg"}
+                src={getImageSrc("hrabkov-panorama.jpeg") || "/placeholder.svg"}
                 alt="Panoráma obce Hrabkov"
                 fill
                 priority
                 className="object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = "/placeholder.svg?height=800&width=1200"
-                }}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-blue-950/60 to-blue-950/80" />
           </div>
@@ -163,13 +174,10 @@ export default function HomePage() {
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-950/60 to-transparent z-10"></div>
                 <Image
-                    src={getImagePath("/images/hrabkov-village.jpeg") || "/placeholder.svg"}
+                    src={getImageSrc("hrabkov-village.jpeg") || "/placeholder.svg"}
                     alt="Obec Hrabkov"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    onError={(e) => {
-                      e.currentTarget.src = "/placeholder.svg?height=500&width=600"
-                    }}
                 />
                 <div className="absolute bottom-6 left-6 z-20 text-white">
                   <h3 className="text-2xl font-bold mb-2">Obec Hrabkov</h3>
@@ -195,13 +203,10 @@ export default function HomePage() {
               <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg">
                 <div className="relative h-48">
                   <Image
-                      src={getImagePath("/images/hrabkov-fields.jpeg") || "/placeholder.svg"}
+                      src={getImageSrc("hrabkov-fields.jpeg") || "/placeholder.svg"}
                       alt="Príroda Hrabkova"
                       fill
                       className="object-cover"
-                      onError={(e) => {
-                        e.currentTarget.src = "/placeholder.svg?height=200&width=400"
-                      }}
                   />
                 </div>
                 <CardContent className="p-6">
@@ -216,13 +221,10 @@ export default function HomePage() {
               <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg">
                 <div className="relative h-48">
                   <Image
-                      src={getImagePath("/images/hrabkov-ruins.jpeg") || "/placeholder.svg"}
+                      src={getImageSrc("hrabkov-ruins.jpeg") || "/placeholder.svg"}
                       alt="História Hrabkova"
                       fill
                       className="object-cover"
-                      onError={(e) => {
-                        e.currentTarget.src = "/placeholder.svg?height=200&width=400"
-                      }}
                   />
                 </div>
                 <CardContent className="p-6">
@@ -237,13 +239,10 @@ export default function HomePage() {
               <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg">
                 <div className="relative h-48">
                   <Image
-                      src={getImagePath("/images/hrabkov-aerial.jpeg") || "/placeholder.svg"}
+                      src={getImageSrc("hrabkov-aerial.jpeg") || "/placeholder.svg"}
                       alt="Komunita Hrabkova"
                       fill
                       className="object-cover"
-                      onError={(e) => {
-                        e.currentTarget.src = "/placeholder.svg?height=200&width=400"
-                      }}
                   />
                 </div>
                 <CardContent className="p-6">
@@ -351,13 +350,10 @@ export default function HomePage() {
               {galleryImages.map((image, index) => (
                   <div key={index} className="relative h-80 rounded-xl overflow-hidden shadow-lg group">
                     <Image
-                        src={image.src || "/placeholder.svg"}
+                        src={getImageSrc(image.src) || "/placeholder.svg"}
                         alt={image.title}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
-                        onError={(e) => {
-                          e.currentTarget.src = "/placeholder.svg?height=320&width=400"
-                        }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
@@ -521,7 +517,6 @@ export default function HomePage() {
                             type="email"
                             id="email"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
-                            placeholder="vas@email.sk"
                         />
                       </div>
                     </div>
