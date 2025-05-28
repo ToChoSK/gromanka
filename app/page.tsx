@@ -4,19 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-  Info,
-  Calendar,
-  Leaf,
-  MapPin,
-  Mail,
-  ChevronDown,
-  Camera,
-  GraduationCap,
-  Building2,
-  User,
-  HomeIcon,
-} from "lucide-react"
+import { Info, Calendar, Leaf, MapPin, Mail, ChevronDown, Camera, GraduationCap, Building2, User, HomeIcon } from 'lucide-react'
 
 export default function HomePage() {
   // Jednoduchá funkcia pre cesty k obrázkom
@@ -199,9 +187,9 @@ export default function HomePage() {
               Malebná obec v prekrásnom prostredí Šarišskej vrchoviny
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg">
-                <div className="relative h-48">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg w-full">
+                <div className="relative h-48 w-full">
                   <Image
                       src={getImageSrc("hrabkov-fields.jpeg") || "/placeholder.svg"}
                       alt="Príroda Hrabkova"
@@ -218,8 +206,8 @@ export default function HomePage() {
                 </CardContent>
               </Card>
 
-              <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg">
-                <div className="relative h-48">
+              <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg w-full">
+                <div className="relative h-48 w-full">
                   <Image
                       src={getImageSrc("hrabkov-ruins.jpeg") || "/placeholder.svg"}
                       alt="História Hrabkova"
@@ -236,8 +224,8 @@ export default function HomePage() {
                 </CardContent>
               </Card>
 
-              <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg">
-                <div className="relative h-48">
+              <Card className="overflow-hidden bg-white/80 backdrop-blur-sm border-none shadow-lg w-full">
+                <div className="relative h-48 w-full">
                   <Image
                       src={getImageSrc("hrabkov-aerial.jpeg") || "/placeholder.svg"}
                       alt="Komunita Hrabkova"
