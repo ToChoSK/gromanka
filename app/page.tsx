@@ -9,8 +9,7 @@ import { Info, Calendar, Leaf, MapPin, Mail, ChevronDown, Camera, GraduationCap,
 export default function HomePage() {
   // Jednoduchá funkcia pre cesty k obrázkom
   const getImageSrc = (imageName: string) => {
-    const basePath = process.env.NODE_ENV === "production" ? "/gromanka" : ""
-    return `${basePath}/images/${imageName}`
+    return `/images/${imageName}`
   }
 
   const scrollToSection = (sectionId: string) => {
