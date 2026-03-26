@@ -1,6 +1,4 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
-
 const nextConfig = {
     typescript: {
         ignoreBuildErrors: true,
@@ -8,13 +6,6 @@ const nextConfig = {
     images: {
         unoptimized: true,
     },
-    // GitHub Pages configuration
-    ...(isProd && {
-        output: 'export',
-        basePath: '/gromanka',
-        assetPrefix: '/gromanka/',
-        trailingSlash: true,
-    }),
 };
 
 export default nextConfig;
