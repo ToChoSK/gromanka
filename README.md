@@ -38,6 +38,6 @@ Stránka je hostovaná na GitHub Pages a zdrojový kód je dostupný v repozitá
 
 Pre viac informácií o združení Gromanka nás kontaktujte na:
 
-- Email: info@gromanka.sk
+- Email: chovancak@gromanka.eu
 - Adresa: Napájadlá 5, 2277/5, 040 22, Košice
 
