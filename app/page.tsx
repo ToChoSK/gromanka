@@ -146,7 +146,7 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center gap-2 text-blue-700 bg-white p-3 rounded-lg shadow-sm">
                     <Mail size={20} className="text-sky-600" />
-                    <span>info@gromanka.sk</span>
+                    <span>chovancak@gromanka.eu</span>
                   </div>
                 </div>
                 <Button
@@ -397,7 +397,7 @@ export default function HomePage() {
                       </div>
                       <div>
                         <h4 className="font-medium text-lg">Email</h4>
-                        <p className="text-white/80">info@gromanka.sk</p>
+                        <p className="text-white/80">chovancak@gromanka.eu</p>
                       </div>
                     </div>
 
@@ -420,7 +420,7 @@ export default function HomePage() {
                       </div>
                       <div>
                         <h4 className="font-medium text-lg">Telefón</h4>
-                        <p className="text-white/80">+421 917 917 384</p>
+                        <p className="text-white/80">0917 917 384</p>
                       </div>
                     </div>
                   </div>
@@ -713,8 +713,8 @@ export default function HomePage() {
               <div>
                 <h3 className="text-xl font-bold mb-4">Kontakt</h3>
                 <div className="space-y-2 text-white/80">
-                  <p>Email: info@gromanka.sk</p>
-                  <p>Telefón: +421 917 917 384</p>
+                  <p>Email: chovancak@gromanka.eu</p>
+                  <p>Telefón: 0917 917 384</p>
                 </div>
                 <div className="mt-4 flex gap-4">
                   <a href="#" className="text-white hover:text-sky-300">
