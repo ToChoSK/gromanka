@@ -8,8 +8,9 @@
     "build:cloudflare": "opennextjs-cloudflare build",
     "start": "next start",
     "lint": "next lint",
-    "preview": "opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare deploy"
+    "preview": "wrangler pages dev .open-next/assets",
+    "deploy": "pnpm run build:cloudflare",
+    "deploy:pages": "wrangler pages deploy .open-next/assets --project-name=gromanka"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
